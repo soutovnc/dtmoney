@@ -17,17 +17,17 @@ createServer({
           type: 'deposit',
           category: 'Development',
           amount: 12800,
-          createdAt: new Date('2021-04-29'),
+          createdAt: new Date('2021-04-29 18:00:00'),
         },
         {
           id: 2,
           title: 'Parcela carro',
           type: 'withdraw',
           category: 'Carro',
-          amount: 1230.88,
-          createdAt: new Date('2021-05-10'),
-        },
-      ]
+          amount: 1230,
+          createdAt: new Date('2021-05-10 10:00:00'),
+        }
+      ],
     })
   },
 
@@ -41,7 +41,7 @@ createServer({
     this.post('/transactions', (schema, request) => {
       const data = JSON.parse(request.requestBody)
       
-      return schema.create('transactions', data)
+      return schema.create('transaction', data)
     })
 
   }
